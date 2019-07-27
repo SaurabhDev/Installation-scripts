@@ -1,0 +1,27 @@
+Jenkins Path :
+/var/lib/jenkins/
+
+Disable Jenkins password
+cd /var/lib/jenkins/
+cat config.xml 
+vi config.xml
+
+
+How to install java
+Download Java tar file from oracle site
+mkdir /opt/java
+tar -zxf jdk-11.0.4_linux-x64_bin.tar.gz -C /opt/java/
+
+Java Path : 
+export JAVA_HOME=/opt/java/jdk-11.0.4/
+export PATH=$PATH:$JAVA_HOME
+
+How to install docker
+sudo apt install docker.io
+
+How to install docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+
