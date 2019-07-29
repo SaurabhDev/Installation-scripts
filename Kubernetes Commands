@@ -30,3 +30,13 @@ kubectl create -f deployment.yaml
 
 #As it's a Deployment object, a list of all the deployed objects can be obtained via 
 kubectl get deployment
+
+# Create Service
+kubectl create -f service.yaml
+kubectl get svc
+kubectl describe svc webapp1-svc
+
+#Update the replicas
+kubectl apply -f deployment.yaml
+kubectl get deployment
+kubectl get pods
