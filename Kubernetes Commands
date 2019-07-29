@@ -1,0 +1,23 @@
+kubectl get nodes
+
+kubectl run http --image=katacoda/docker-http-server:latest --replicas=1
+
+kubectl describe deployment http
+
+#Use the following command to expose the container port 80 on the host 8000 binding to the external-ip of the host
+kubectl expose deployment http --external-ip="172.17.0.43" --port=8000 --target-port=80
+
+#ping the host and see the result from the HTTP service.
+curl http://172.17.0.43:8000
+
+#Use the command command to create a second http service exposed on port 8001.
+
+#Use the command command to create a second http service exposed on port 8001.
+kubectl run httpexposed --image=katacoda/docker-http-server:latest --replicas=1 --port=80 --hostport=8001
+curl http://172.17.0.43:8001
+
+#The command kubectl scale allows us to adjust the number of Pods running for a particular deployment or replication controller.
+kubectl scale --replicas=3 deployment http
+
+#Listing all the pods, you should see three running for the http deployment
+kubectl get pods
