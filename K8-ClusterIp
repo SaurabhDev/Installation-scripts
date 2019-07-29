@@ -27,32 +27,34 @@ spec:
         ports:
         - containerPort: 80
 ---
-master $ cat clusterip.yaml
+###########################################################################################################
+cat clusterip-target.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp1-clusterip-svc
+  name: webapp1-clusterip-targetport-svc
   labels:
-    app: webapp1-clusterip
+    app: webapp1-clusterip-targetport
 spec:
   ports:
-  - port: 80
+  - port: 8080
+    targetPort: 80
   selector:
-    app: webapp1-clusterip
+    app: webapp1-clusterip-targetport
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: webapp1-clusterip-deployment
+  name: webapp1-clusterip-targetport-deployment
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: webapp1-clusterip
+        app: webapp1-clusterip-targetport
     spec:
       containers:
-      - name: webapp1-clusterip-pod
+      - name: webapp1-clusterip-targetport-pod
         image: katacoda/docker-http-server:latest
         ports:
         - containerPort: 80
