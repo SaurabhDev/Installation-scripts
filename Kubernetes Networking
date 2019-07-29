@@ -1,0 +1,7 @@
+# Kubernetes have advanced networking capabilities that allow Pods and Services to communicate inside the cluster's network and externally.
+#Cluster IP
+#Target Ports
+#NodePort
+#External IPs
+#Load Balancer
+#https://github.com/SonarSource/sonar-scanning-examples
