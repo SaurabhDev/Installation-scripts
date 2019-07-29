@@ -24,3 +24,9 @@ kubectl get pods
 
 #Once each Pod starts it will be added to the load balancer service. By describing the service you can view the endpoint and the associated Pods which are included.
 kubectl describe svc http
+
+#This is deployed to the cluster with the command 
+kubectl create -f deployment.yaml
+
+#As it's a Deployment object, a list of all the deployed objects can be obtained via 
+kubectl get deployment
