@@ -21,3 +21,6 @@ kubectl scale --replicas=3 deployment http
 
 #Listing all the pods, you should see three running for the http deployment
 kubectl get pods
+
+#Once each Pod starts it will be added to the load balancer service. By describing the service you can view the endpoint and the associated Pods which are included.
+kubectl describe svc http
