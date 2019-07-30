@@ -11,3 +11,9 @@ npm -v
 sudo npm install -g n
 node -v
 history
+npm install -g @angular/cli
+ng new devops-app
+ls
+cd devops-app/
+ng serve
+
