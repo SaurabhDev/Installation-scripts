@@ -16,4 +16,7 @@ ng new devops-app
 ls
 cd devops-app/
 ng serve
+npm install http-server -g
+npm install http-server -p 3000
+sudo nohup http-server -p 8080 &
 
