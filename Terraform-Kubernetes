@@ -1,0 +1,48 @@
+
+# EKS Terraform module
+
+module "network" {
+source                  = "./modules/network"
+aws-region         = "${var.aws-region}"
+cluster-name1       = "${var.cluster-name1}"
+cluster-name2       = "${var.cluster-name2}"
+}
+
+module "eks1" {
+  source             = "./modules/eks-1"
+  cluster-name       = "${var.cluster-name1}"
+  k8s-version        = "${var.k8s-version}"
+  aws-region         = "${var.aws-region}"
+  node-instance-type = "${var.node-instance-type}"
+  desired-capacity   = "${var.desired-capacity}"
+  max-size           = "${var.max-size}"
+  min-size           = "${var.min-size}"
+  vpc-subnet1            = "${module.network.DMZSubnet1}"
+  vpc-subnet2            = "${module.network.DMZSubnet2}"
+  vpc-id                         = "${module.network.VPC}"
+  KeyName                = "${var.KeyName}"
+  eks-worker-ami         = "${var.eks-worker-ami}"
+}
+
+module "eks2" {
+  source             = "./modules/eks-2"
+  cluster-name       = "${var.cluster-name2}"
+  k8s-version        = "${var.k8s-version}"
+  aws-region         = "${var.aws-region}"
+  node-instance-type = "${var.node-instance-type}"
+  desired-capacity   = "${var.desired-capacity}"
+  max-size           = "${var.max-size}"
+  min-size           = "${var.min-size}"
+  vpc-subnet1            = "${module.network.PrivateSubnet1}"
+  vpc-subnet2            = "${module.network.PrivateSubnet2}"
+  vpc-id                         = "${module.network.VPC}"
+  KeyName                = "${var.KeyName}"
+  eks-worker-ami         = "${var.eks-worker-ami}"
+}
+module "rds" {
+source                  = "./modules/rds"
+nameurce             = "./module= "${var.rdsname}"
+subnetser-name       = "${var.cl= ["${module.network.PrivateSubnet1}", "${module.network.PrivateSubnet2}"]
+vpc_id               = "${var.k8= "${module.network.VPC}"
+instance_type           = "${var.rds_InstanceType}"
+}
