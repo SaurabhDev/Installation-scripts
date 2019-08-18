@@ -5,6 +5,7 @@ apt-get install -y software-properties-common
 sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
 sudo add-apt-repository "deb https://packages.grafana.com/oss/deb beta main"
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+apt-get -f install
 sudo apt-get update
 sudo apt-get install grafana
 sudo apt-get install -y apt-transport-https
