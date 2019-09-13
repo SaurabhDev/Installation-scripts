@@ -1,0 +1,12 @@
+#Start/Stop the Tomcat Server
+#if (ps -eaf | grep -v grep | grep tomcat | awk '{print $2}'); then
+echo 'process is running'
+#sudo kill $(ps -eaf | grep -v grep | grep tomcat | awk '{print $2}')
+#fi
+sudo rm -rf /opt/tomcat/apache-tomcat-9.0.24/webapps/Demo-CICD.war 
+sudo cp /var/lib/jenkins/workspace/JenkinsDemo/target/Demo-CICD.war /opt/tomcat/apache-tomcat-9.0.24/webapps/
+cd /opt/tomcat/apache-tomcat-9.0.24/bin/
+sudo ./startup.sh
+
+# Add jenkins to sudo user
+usermod -a -G sudo jenkins
