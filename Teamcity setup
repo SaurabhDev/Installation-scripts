@@ -11,3 +11,5 @@ sudo mkdir /opt/jetbrains
 sudo mv TeamCity /opt/jetbrains/
 sudo useradd teamcity
 sudo chown -R teamcity:teamcity /opt/jetbrains/TeamCity
+sudo /opt/jetbrains/TeamCity/bin/runAll.sh start
+
