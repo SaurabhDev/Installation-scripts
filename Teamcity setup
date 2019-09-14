@@ -1,0 +1,13 @@
+cd Downloads/
+sudo wget https://download.jetbrains.com/teamcity/TeamCity-2017.1.2.tar.gz
+sudo tar -xvzf TeamCity-2017.1.2.tar.gz
+sudo mkdir /opt && sudo mkdir /opt/jetbrains
+sudo mkdir /opt/jetbrains
+#sudo mv /Downloads/TeamCity /opt/jetbrains
+#sudo mv /Downloads/TeamCity /opt/jetbrains
+#cd TeamCity/
+#cd ..
+#mv TeamCity /opt/jetbrains/
+sudo mv TeamCity /opt/jetbrains/
+sudo useradd teamcity
+sudo chown -R teamcity:teamcity /opt/jetbrains/TeamCity
