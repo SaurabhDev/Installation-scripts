@@ -11,3 +11,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ##############3 goto the URL ####
 http://localhost:8080
+# It will popup for initialpassword 
+copy the password by executing the line #10
+create username n pwd as admin
+Select to install suggested plugins
