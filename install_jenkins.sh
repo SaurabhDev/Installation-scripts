@@ -8,3 +8,6 @@ sudo apt install jenkins
 systemctl status jenkins
 sudo ufw allow 8080
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+##############3 goto the URL ####
+http://localhost:8080
