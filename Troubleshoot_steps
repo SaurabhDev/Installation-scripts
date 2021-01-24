@@ -1,0 +1,9 @@
+#Jenkins unable to run shell script
+sudo usermod -a -G Jenkins
+sudo vi  /etc/sudoers
+jenkins ALL=(ALL) NOPASSWD: ALL
+sudo usermod -a -G root jenkins
+sudo service jenkins restart
+
+#docker jenkins user add 
+sudo usermod -a -G docker jenkins
