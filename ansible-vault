@@ -1,0 +1,7 @@
+ansible-vault create vault.yml
+cat vault.yml
+echo 'test vault' > encrypt_me.txt
+ansible-vault encrypt encrypt_me.txt
+cat encrypt_me.txt
+ansible-vault view vault.yml
+ansible-vault view encrypt_me.txt
